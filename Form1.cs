@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,17 +33,17 @@ namespace RhEnus
 
         }
 
-        private void schiff_Tick(object sender, EventArgs e)
+        private void schiff_Tick(object sender, EventArgs e) # Der Timer in dieses Beispiel benannt als schiff_tick
         {
-            timeleft = timeleft.Subtract(TimeSpan.FromSeconds(1));
-            label1.Text = timeleft.ToString(@"hh\:mm\:ss");
+            timeleft = timeleft.Subtract(TimeSpan.FromSeconds(1)); # Hier das de Intervall eine Minute immer eine Zahl weniger wird
+            label1.Text = timeleft.ToString(@"hh\:mm\:ss"); # Die Aktulisierung vom String
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            timeleft = new TimeSpan(0, 30, 0);
+            timeleft = new TimeSpan(0, 30, 0); # Die Start grundwerte
             label1.Text = timeleft.ToString(@"hh\:mm");
-            schiff.Start();
+            schiff.Start(); #Der Timer startet
        }
     }
 }
